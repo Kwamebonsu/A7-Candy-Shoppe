@@ -20,9 +20,15 @@ public class IceCream extends DessertItem {
     }
 
     public String toString() {
-        // Add the name and cost
-        String fromSuper = super.toString();
-        return fromSuper;
+        // Add name and cost
+        String output = this.getName();
+        String holder = DessertShoppe.cents2dollarsAndCents(getCost());
+        for (int i = 0; i < DessertShoppe.RECEIPT_WIDTH - this.getName().length() - holder.length(); i++) {
+            output += " ";
+        }
+        output += holder;
+
+        return output;
     }
 
     @Override
