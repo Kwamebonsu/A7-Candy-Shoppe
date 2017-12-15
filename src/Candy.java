@@ -27,6 +27,7 @@ public class Candy extends DessertItem {
         String output = this.weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(this.pricePerLbs) + " /lb";
         String holder = DessertShoppe.cents2dollarsAndCents(getCost());
         output += "\n" + this.getName();
+        // Create spaces
         for (int i = 0; i < DessertShoppe.RECEIPT_WIDTH - this.getName().length() - holder.length(); i++) {
             output += " ";
         }
@@ -37,9 +38,9 @@ public class Candy extends DessertItem {
 
     @Override
     public int getCost() {
-        // Calculate the cost by multiplying weight and price/lbs and cast it as an integer
+        // Calculate the cost by multiplying weight and price/lbs, round it then cast it as an integer
         int cost;
-        cost = (int) (this.weight * this.pricePerLbs);
+        cost = (int) Math.round(this.weight * this.pricePerLbs);
         return cost;
     }
 }

@@ -23,6 +23,7 @@ public class IceCream extends DessertItem {
         // Add name and cost
         String output = this.getName();
         String holder = DessertShoppe.cents2dollarsAndCents(getCost());
+        // Create spaces
         for (int i = 0; i < DessertShoppe.RECEIPT_WIDTH - this.getName().length() - holder.length(); i++) {
             output += " ";
         }

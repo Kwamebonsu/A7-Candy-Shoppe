@@ -26,6 +26,7 @@ public class Sundae extends IceCream {
         String output = this.toppingName + " sundae " + "with\n";
         String holder = DessertShoppe.cents2dollarsAndCents(getCost());
         output += this.getName();
+        // Create spaces
         for (int i = 0; i < DessertShoppe.RECEIPT_WIDTH - this.getName().length() - holder.length(); i++) {
             output += " ";
         }

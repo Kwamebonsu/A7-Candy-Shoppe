@@ -24,9 +24,10 @@ public class Cookie extends DessertItem {
     @Override
     public String toString() {
         // Add name and cost
-        String output = this.number + " @ " + this.pricePer12 + " /dz";
+        String output = this.number + " @ " + DessertShoppe.cents2dollarsAndCents(this.pricePer12) + " /dz";
         String holder = DessertShoppe.cents2dollarsAndCents(getCost());
         output += "\n" + this.getName();
+        // Create spaces
         for (int i = 0; i < DessertShoppe.RECEIPT_WIDTH - this.getName().length() - holder.length(); i++) {
             output += " ";
         }
@@ -39,7 +40,7 @@ public class Cookie extends DessertItem {
     public int getCost() {
         int cost;
         // Calculate the cost
-        cost = (int)(pricePer12 * number) / 12;
+        cost = (int) (pricePer12 * number) / 12;
         return cost;
     }
 }
